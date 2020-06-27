@@ -800,6 +800,10 @@ width:100%;
   background-color: #DC143C !important;
 }
 
+.burger-close{
+  background-image: url('../img/burger-close.png') !important;
+}
+
 @media(max-width: 1440px){
 	.examples-cont{
     display: flex;
@@ -1016,16 +1020,6 @@ width:100%;
     height: 32px;
     border: none;
     outline: none;
-  }
-
-  .header__burger:hover{
-    box-shadow: 7px 4px 19px -4px red;
-    transition: box-shadow 0.5s;
-  }
-
-  .header__burger:not(hover){
-    box-shadow: none;
-    transition: box-shadow 0.5s;
   }
 
   .header__mobileMenu{
@@ -1477,7 +1471,7 @@ width:100%;
 
   .aboutMe{
     padding-top: 25px;
-    background-position: 100% 26%;
+    background-position: 100% 31.5%;
     background-size: 100% 54.5%;
     position: static;
   }
@@ -1548,6 +1542,7 @@ width:100%;
 
   .swiper-container{
     margin-top: 40px;
+    margin-bottom: 22px;
   }
 
   .swiper-wrapper__text{

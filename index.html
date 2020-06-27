@@ -4,8 +4,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Сайт-визитка</title>
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="stylesheet" href="css/swiper.css">
 	<link rel="stylesheet" href="css/swiper.min.css">
 	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="apple-touch-icon" sizes="180x180" href="res/apple-touch-icon.png">
@@ -13,6 +11,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="res/favicon-16x16.png">
 	<link rel="manifest" href="res/site.webmanifest">
 	<link rel="mask-icon" href="res/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
 </head>
@@ -76,9 +75,27 @@
     					<button class="swiper-button-next"></button>
 						<div class="swiper-container swiper-no-swiping">
     						<div class="swiper-wrapper">
-        						<div class="swiper-slide card"><img src="img/Rectangle4.png" alt="w1" class="hypImg"><span class="swiper-wrapper__text">Сайт психолога Веры Антоновой</span></div>
-        						<div class="swiper-slide card"><img src="img/Rectangle2.png" alt="w1" class="babyImg"><span class="swiper-wrapper__text baby-store">Сайт магазина детской одежды</span></div>
-        						<div class="swiper-slide card"><img src="img/Rectangle3.png" alt="w1" class="fishImg"><span class="swiper-wrapper__text">Сайт магазина &#171;рыболов&#187;</span></div>
+        						<div class="swiper-slide card">
+        							<picture>
+ 										<source srcset="img/Rectangle4.png" media="(min-width: 375px)">
+ 										<img src="img/hyp-mob.png" alt="slide1">
+									</picture>
+									<span class="swiper-wrapper__text">Сайт психолога Веры Антоновой</span>
+        						</div>
+        						<div class="swiper-slide card">
+        							<picture>
+ 										<source srcset="img/Rectangle2.png" media="(min-width: 375px)">
+ 										<img src="img/baby-mob.png" alt="slide2">
+									</picture>
+        							<span class="swiper-wrapper__text baby-store">Сайт магазина детской одежды</span>
+        						</div>
+        						<div class="swiper-slide card">
+        							<picture>
+ 										<source srcset="img/Rectangle3.png" media="(min-width: 375px)">
+ 										<img src="img/fish-mob.png" alt="slide3">
+									</picture>
+        							<span class="swiper-wrapper__text">Сайт магазина &#171;рыболов&#187;</span>
+        						</div>
 							</div>
 						</div>
 						<div class="swiper-pagination"></div>
@@ -129,10 +146,10 @@
 				</ul>
 				<ul class="footer-container__list social">
 					<li><button class="social__btn">Заказать звонок</button></li>
-					<li><a href="#" class="footer-container__link vk"></a></li>
-					<li><a href="#" class="footer-container__link fb"></a></li>
-					<li><a href="#" class="footer-container__link tw"></a></li>
-					<li><a href="#" class="footer-container__link inst"></a></li>
+					<li><a href="https://vk.com" class="footer-container__link vk" target="_blank"></a></li>
+					<li><a href="https://facebook.com" class="footer-container__link fb" target="_blank"></a></li>
+					<li><a href="https://twitter.com" class="footer-container__link tw" target="_blank"></a></li>
+					<li><a href="https://instagram.com" class="footer-container__link inst" target="_blank"></a></li>
 				</ul>
 			</div>
 			<div class="footer-watermark">
@@ -141,11 +158,14 @@
 		</footer>
 		<div class="myModal">
   			<h3>Заказ звонка</h3>
-  			<form action="" class="myModal__form">
-  				<label for="GET-name">Имя:</label>
-  				<input class="GET-name" type="text" name="name">
-  				<label for="GET-number">Номер телефона:</label>
-  				<input class="GET-number" type="tel" name="number" placeholder="+7(___)___-__-__">
+  			<form class="myModal__form">
+  				<input type="hidden" name="project_name" value="maxtwoo">
+  				<input type="hidden" name="admin_email" value="petrnethgod@gmail.com">
+  				<input type="hidden" name="form_subject" value="Заказ проекта">
+  				<label for="g-name">Имя:</label>
+  				<input class="GET-name" id="g-name" type="text" name="name">
+  				<label for="g-number">Номер телефона:</label>
+  				<input class="GET-number" id="g-number" type="tel" name="number" placeholder="+7(___)___-__-__">
   				<input type="submit" value="Отправить">
   			</form>
   			<button class="myModal__closeBtn close"></button>
@@ -153,12 +173,11 @@
 		<div class="myOverlay"></div>
 	</div>
 	<script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/script.js"></script>
-	<script src="js/swiper.js"></script>
 	<script src="js/swiper.min.js"></script>
 	<script src="js/slider.js"></script>
 	<script src="js/jquery.inputmask.min.js"></script>
 	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/script.js"></script>
 </body>
 
 </html>

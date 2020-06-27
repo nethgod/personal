@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  var scroll = $(this).scrollTop();
+
   windowsSize();
   $(window).resize(windowsSize);
   $(window).resize(function(){
@@ -20,6 +22,7 @@ $(document).ready(function() {
         $(".swiper-pagination").removeClass("hidden");
         $('.header__burger').on('click', function(){
           $('.header__mobileMenu').slideToggle(300, function(){$(this).stop(true);});
+          $('.header__burger').toggleClass('burger-close');
         });
 
         $(document).mouseup(function (e){ 
@@ -31,6 +34,7 @@ $(document).ready(function() {
             && $('.header__burger').hasClass('header__burger')) { 
               $('.header__mobileMenu').slideToggle(300, function(){$(this).stop(true);});
               $('.header__mobileMenu').css('display')=='flex';
+              $('.header__burger').toggleClass('burger-close');
           }
         });
     }
@@ -63,37 +67,10 @@ $(document).ready(function() {
                                         <span class="price-container__title--sub">* Срок и стоимость могут отличаться от заявленных и рассчитываются  индивидуально,<br> 
                                         &ensp;в зависимости от сложности задач.</span>`);
     }
-
-    if ($(window).width() <= '375'){
-      $('.about-info__title--prof').html('Frontend-разработчик и веб-<br>верстальщик');
-      $('.babyImg').attr("src","img/baby-mob.png");
-      $('.hypImg').attr("src","img/hyp-mob.png");
-      $('.fishImg').attr("src","img/fish-mob.png");
-      $('.btn-container__btn').text('Заказать проект');
-      
-      $('.mail-link').html(`
-        <a href="mailto:dmitry@alekseev.com">
-          <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>
-          dmitry@alekseev.com
-        </a>`)
-      }
-
-      if ($(window).width() > '375'){
-      $('.about-info__title--prof').html('Frontend-разработчик и веб-верстальщик');
-      $('.babyImg').attr("src","img/Rectangle2.png");
-      $('.hypImg').attr("src","img/Rectangle4.png");
-      $('.fishImg').attr("src","img/Rectangle3.png");
-      $('.btn-container__btn').text('Узнать стоимость');
-      $('.mail-link').html(`
-        <a href="mailto:dmitry@alekseev.com">
-              <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>
-                &ensp;dmitry@alekseev.com
-            </a>
-            <br>`)
-      }
-    }
+  }
 
   $('.header__btn, .about-info__btn, .about-work__btn, .btn-container__btn, .social__btn').click( function(event){
+    scroll = $(document).scrollTop();
     event.preventDefault();
     $('.myOverlay').fadeIn(297,	function(){
       $('.myModal') 
@@ -120,7 +97,9 @@ $(document).ready(function() {
 
     $('body').toggleClass('stop-scrolling stop-scrolling__mob');
     $('.myModal__form')[0].reset();
-  });
+    $('html, body').animate({
+      scrollTop: scroll }, 700);
+    });
 
   $(".nav__item").on("click","a", function (event) {
     var el = $(this);
@@ -152,7 +131,21 @@ $(document).ready(function() {
           maxlength: 12,
         },
       },
+      submitHandler: function(form){
+        let th = $(form);
 
+        $.ajax({
+          type: 'POST',
+          url: 'mail.php',
+          data: th.serialize(),
+        }).done(() => {
+
+          th.trigger('reset');
+
+          });
+
+          return false;
+      }
     })
   })
 
