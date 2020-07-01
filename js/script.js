@@ -12,39 +12,7 @@ $(document).ready(function() {
 
   function windowsSize(){
     if ($(window).width() <= '1024'){
-        $('.baby-store').text('Интернет-магазин детской одежды');
-        $('.btn-container__btn').text('Узнать стоимость');
-        $('.fly-tag--div2').text('</>');
-        if(!$("button").is(".header__burger")){
-          $('.header__container').prepend('<button class="header__burger"></button>');
-        }
-        $(".header__burger").removeClass("hidden");
         $(".swiper-pagination").removeClass("hidden");
-        $('.header__burger').on('click', function(){
-          $('.header__mobileMenu').slideToggle(300, function(){$(this).stop(true);});
-          $('.header__burger').toggleClass('burger-close');
-        });
-
-        $(document).mouseup(function (e){ 
-          var div = $(".header__burger"); 
-          if (!div.is(e.target) 
-            && div.has(e.target).length === 0
-            && $('.header__mobileMenu').css('display')!='none'
-            && !$('.header__burger').is(e.target)
-            && $('.header__burger').hasClass('header__burger')) { 
-              $('.header__mobileMenu').slideToggle(300, function(){$(this).stop(true);});
-              $('.header__mobileMenu').css('display')=='flex';
-              $('.header__burger').toggleClass('burger-close');
-          }
-        });
-    }
-
-    if ($(window).width() > '1024'){
-        $('.baby-store').text('Сайт магазина детской одежды');
-        $('.btn-container__btn').text('Заказать проект');
-        $('.fly-tag--div2').text('<div>');
-        $(".header__burger").addClass("hidden");
-        $('.swiper-pagination').addClass("hidden");
     }
 
     if ($(window).width() <= '768'){
@@ -53,19 +21,6 @@ $(document).ready(function() {
 
     if ($(window).width() > '768'){
       $('.header__btn').text('Заказать звонок');
-    }
-
-    if ($(window).width() <= '576'){
-      $('.price-container__title').html(`
-        Адаптивная вёрстка<br>под все устройства<br>и браузеры от 1000<br>рублей всего<br>за 4 часа.*
-        <span class="price-container__title--sub">* Срок и стоимость могут отличаться<br>&ensp;
-        от заявленных и рассчитываются<br>&ensp;&ensp;индивидуально, в зависимости<br>&ensp;&ensp;от сложности задач.</span>`);
-    }
-
-    if ($(window).width() > '576'){
-      $('.price-container__title').html(`Адаптивная вёрстка под все устройства<br> и браузеры от 1000 рублей всего за 4 часа.*
-                                        <span class="price-container__title--sub">* Срок и стоимость могут отличаться от заявленных и рассчитываются  индивидуально,<br> 
-                                        &ensp;в зависимости от сложности задач.</span>`);
     }
   }
 
@@ -98,7 +53,7 @@ $(document).ready(function() {
     $('body').toggleClass('stop-scrolling stop-scrolling__mob');
     $('.myModal__form')[0].reset();
     $('html, body').animate({
-      scrollTop: scroll }, 700);
+      scrollTop: scroll }, 1);
     });
 
   $(".nav__item").on("click","a", function (event) {
@@ -141,13 +96,30 @@ $(document).ready(function() {
         }).done(() => {
 
           th.trigger('reset');
-
+          alert('Заявка успешно отправлена');
           });
 
           return false;
       }
     })
-  })
+  });
+
+  $('.header__burger').on('click', function(){
+    $('.header__mobileMenu').slideToggle(300, function(){$(this).stop(true);});
+    $('.header__burger').toggleClass('burger-close');
+  });
+
+  $(document).mouseup(function (e){ 
+      var div = $(".header__burger"); 
+      if (!div.is(e.target) 
+        && div.has(e.target).length === 0
+        && $('.header__mobileMenu').css('display')!='none'
+        && $('.header__burger').hasClass('header__burger')) { 
+          $('.header__mobileMenu').slideToggle(300, function(){$(this).stop(true);});
+          $('.header__mobileMenu').css('display')=='flex';
+          $('.header__burger').toggleClass('burger-close');
+        }
+  });
 
 
 });

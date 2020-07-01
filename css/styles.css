@@ -426,6 +426,7 @@ a {
   	border: none;
   	outline: none;
   	background-size: 60px 60px;
+    margin-top: -125px;
 }
 
 .swiper-button-next{
@@ -681,19 +682,27 @@ a {
 }
 
 .vk{
-	background-position: 1px 4px;
+	background-position: 2px 4px;
+  padding-left: 40px;
+  padding-bottom: 21px;
 }
 
 .fb{
-	background-position: -65px 2px;
+	background-position: -67px 4px;
+  padding-left: 40px;
+  padding-bottom: 21px
 }
 
 .tw{
 	background-position: -126px 4px;
+  padding-left: 40px;
+  padding-bottom: 21px
 }
 
 .inst{
-	background-position: -183px 2px;
+	background-position: -185px 4px;
+  padding-left: 40px;
+  padding-bottom: 21px
 }
 
 .footer-watermark{
@@ -804,6 +813,16 @@ width:100%;
   background-image: url('../img/burger-close.png') !important;
 }
 
+.footer-container__link:hover{
+    box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+    transition: box-shadow 0.5s;
+}
+
+.footer-container__link:not(hover){
+    box-shadow: none;
+    transition: box-shadow 0.5s;
+}
+
 @media(max-width: 1440px){
 	.examples-cont{
     display: flex;
@@ -817,6 +836,10 @@ width:100%;
 
   .container{
     padding: 0 40px;
+  }
+
+  .header__burger{
+    display: none;
   }
 
   .swiper-container {
@@ -898,13 +921,22 @@ width:100%;
   .aboutMe{
     background-image: url('../img/Ellipse_tablet.svg');
     background-position: 100% 1370%;
-}
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next{
+    margin-top: -70px;
+  }
 }
 
 @media(max-width: 1024px){
 	.container {
     padding: 0 40px;
 	}
+
+  .header__burger{
+    display: inherit;
+  }
 
 	.about-info {
     padding-top: 179px;
@@ -1042,6 +1074,11 @@ width:100%;
 
   .nav__link{
     font-size: 2.5vw;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next{
+    margin-top: -80px;
   }
 }
 
@@ -1302,21 +1339,32 @@ width:100%;
     padding: 0 20px;
   }
 
+  .price-container{
+
+  }
+
   .price-container__title{
     font-size: 28px;
     margin-top: 43px;
-    width: 100%;
+    max-width: 100%;
     line-height: 40px;
+    white-space: normal;
+    padding: 0 10px;
   }
 
   .price-container__title--sub{
     font-size: 15px;
     line-height: 31px;
     max-width: 100%;
+    padding: 0 10px;
   }
 
   .fly-tagPrice--braces{
     top: 5px;
+  }
+
+  .fly-tagPrice--div{
+    display: none;
   }
 
   .connection{
@@ -1581,11 +1629,13 @@ width:100%;
     width: 100%;
     margin-left: 20px;
     line-height: 40px;
+    padding: 0;
   }
 
   .price-container__title--sub{
     font-size: 15px;
     line-height: 31px;
+    padding: 0;
   }
 
   .footer__nav{
