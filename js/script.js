@@ -42,6 +42,10 @@ $(document).ready(function() {
       $('.myOverlay').fadeOut(297);
     });
 
+    $('.modalDone').animate({opacity: 0}, 198, function(){
+      $(this).css('display', 'none');
+    });
+
     if($('.GET-name').hasClass('error')){
       $('.GET-name').toggleClass('error');
     }
@@ -54,7 +58,7 @@ $(document).ready(function() {
     $('.myModal__form')[0].reset();
     $('html, body').animate({
       scrollTop: scroll }, 1);
-    });
+  });
 
   $(".nav__item").on("click","a", function (event) {
     var el = $(this);
@@ -95,8 +99,17 @@ $(document).ready(function() {
           data: th.serialize(),
         }).done(() => {
 
-          th.trigger('reset');
-          alert('Заявка успешно отправлена');
+            th.trigger('reset');
+
+            $('.myModal').animate({opacity: 0}, 198, function(){
+              $(this).css('display', 'none');
+            });
+
+            $('.myOverlay').fadeIn(297, function(){
+              $('.modalDone') 
+                .css('display', 'block')
+                .animate({opacity: 1}, 198);
+            });
           });
 
           return false;

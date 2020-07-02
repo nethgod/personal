@@ -411,6 +411,18 @@ a {
 	display: none;
 }
 
+.swiper-button-prev:hover,
+.swiper-button-next:hover{
+  box-shadow: 0px 0px 17px 1px #000000;
+  transition: box-shadow 0.5s ;
+}
+
+.swiper-button-prev:not(hover),
+.swiper-button-next:not(hover){
+  box-shadow: none;
+  transition: box-shadow 0.5s ;
+}
+
 .swiper-button-prev,
 .swiper-button-next{
 	width: 60px !important;
@@ -426,7 +438,7 @@ a {
   	border: none;
   	outline: none;
   	background-size: 60px 60px;
-    margin-top: -125px;
+    margin-top: -65px;
 }
 
 .swiper-button-next{
@@ -718,6 +730,29 @@ a {
 	padding-top: 30px;
 }
 
+.modalDone{
+  width: 340px; 
+  height: 100px;
+  padding: 18px 9px;
+  border-radius: 4px;
+  background: #fafafa;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin: auto;
+  display: none;
+  opacity: 0;
+  z-index: 38;
+  text-align: center;
+  font-size: 22px;
+}
+
+.modalDone h3{
+  margin-bottom: 15px;
+  background-image: linear-gradient(to top, #f26522 0%, #fa0891 99%, #fa0891 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
 .myModal {
   width: 340px; 
   height: 295px;
@@ -925,7 +960,7 @@ width:100%;
 
   .swiper-button-prev,
   .swiper-button-next{
-    margin-top: -70px;
+    margin-top: -20px;
   }
 }
 
@@ -1078,7 +1113,7 @@ width:100%;
 
   .swiper-button-prev,
   .swiper-button-next{
-    margin-top: -80px;
+    margin-top: -60px;
   }
 }
 
@@ -1349,14 +1384,16 @@ width:100%;
     max-width: 100%;
     line-height: 40px;
     white-space: normal;
-    padding: 0 10px;
+    padding: 0 10px 0 20px;
+    text-align: left;
   }
 
   .price-container__title--sub{
     font-size: 15px;
     line-height: 31px;
     max-width: 100%;
-    padding: 0 10px;
+    padding: 0 10px 20px 10px;
+    text-align: left;
   }
 
   .fly-tagPrice--braces{

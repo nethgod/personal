@@ -8,10 +8,6 @@ let mySwiper = new Swiper (slider, {
     	nextEl: '.swiper-button-next',
     	prevEl: '.swiper-button-prev',
   	},
-  pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-        },
 
   	breakpoints: {
   		1440: {
@@ -19,13 +15,9 @@ let mySwiper = new Swiper (slider, {
 			spaceBetween: 30,
 			loop: true
   		},
-  		1024: {
+  		1025: {
   			slidesPerView: 2,
   			spaceBetween: 35,
-  			pagination: {
-    			el: '.swiper-pagination',
-    			type: 'bullets',
-  			},
   		},
       768: {
         slidesPerView: 2,
