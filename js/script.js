@@ -13,6 +13,7 @@ $(document).ready(function() {
   function windowsSize(){
     if ($(window).width() <= '1024'){
         $(".swiper-pagination").removeClass("hidden");
+        $(".swiper-container").removeClass("swiper-no-swiping");
     }
 
     if ($(window).width() <= '768'){

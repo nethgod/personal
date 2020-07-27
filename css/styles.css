@@ -1556,7 +1556,7 @@ width:100%;
 
   .aboutMe{
     padding-top: 25px;
-    background-position: 100% 31.5%;
+    background-position: 100% 26.5%;
     background-size: 100% 54.5%;
     position: static;
   }
@@ -1568,12 +1568,15 @@ width:100%;
 
   .about-info{
     padding-top: 12px;
+    width: 100%;
   }
 
   .about-info__title{
     font-size: 30px;
     text-align: center;
     margin-bottom: 29px;
+    width: 100%;
+    word-wrap: break-word !important;
   }
 
   .about-info__btn{
@@ -1584,6 +1587,8 @@ width:100%;
   .about-info__title--prof{
     font-size: 16px;
     margin-top: 10px;
+    max-width: 100%;
+    white-space: normal;
   }
 
   .myWork{

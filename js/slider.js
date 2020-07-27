@@ -25,6 +25,7 @@ let mySwiper = new Swiper (slider, {
         pagination: {
           el: '.swiper-pagination',
           type: 'bullets',
+          clickable: true,
         },
       },
       320: {
@@ -33,6 +34,7 @@ let mySwiper = new Swiper (slider, {
         pagination: {
           el: '.swiper-pagination',
           type: 'bullets',
+          clickable: true,
         },
       }
   },
