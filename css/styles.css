@@ -1685,6 +1685,16 @@ width:100%;
   .nav__link{
     font-size: 3vw;
   }
+
+  .swiper-pagination-bullet{
+    margin-top: 50px;
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .btn-container__btn{
+    margin-top: 50px;
+  }
 }
 
 @media (max-width: 576px){
